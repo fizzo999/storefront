@@ -1,0 +1,28 @@
+{
+  "name": "storefront",
+  "version": "1.0.0",
+  "description": "To Do List Manager using react - built in 4 phases. A Web Application for securely managing a To Do List",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fizzo999/storefront.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fizzo999/storefront/issues"
+  },
+  "homepage": "https://github.com/fizzo999/storefront#readme",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
+    "react-scripts": "^4.0.3",
+    "redux": "^4.1.0",
+    "redux-devtools-extension": "^2.13.9"
+  }
+}
