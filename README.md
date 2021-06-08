@@ -30,9 +30,9 @@ An online shopping portal for a fictional store
 
 Our application will power an online storefront that will allow our users to browse our product offerings by category, place items in their shopping cart, and check-out when they are ready to make their purchase
 
-[Live Example](https://virtual-web-store.netlify.app/)
+[Live Example - link to Code Fellows live example website](https://virtual-web-store.netlify.app/)
 
-Walkthrough Demo
+![Walkthrough Demo](./src/assets/previewStorefront.png)
 
 ## Virtual Store
 
@@ -61,9 +61,10 @@ The application will be created with the following overall architecture and meth
 
 ### Application Structure (proposed)
 
+```linux
 ├── .gitignore
 ├── .eslintrc.json
-├── **tests**
+├── ____tests____
 │ ├── app.test.js
 │ ├── cart.test.js
 ├── src
@@ -90,6 +91,7 @@ The application will be created with the following overall architecture and meth
 │ │ ├── footer
 │ │ │ └── footer.js
 └── package.json
+```
 
 ## Development Process, Milestones
 
@@ -147,6 +149,8 @@ npm run test
 
 - will run the command "react-scripts test --verbose --coverage" -->
 <!-- tests performed with jest through react-scripts -->
+
+<!-- "homepage": "https://github.com/fizzo999/storefront#readme" -->
 
 ## Architecture
 
