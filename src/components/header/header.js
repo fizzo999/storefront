@@ -1,18 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
 import { categories, reset } from '../../store/categories.js';
+import { AppBar } from '@material-ui/core';
+// import { Typography, AppBar, Toolbar } from '@material-ui/core';
+// import { ShoppingCartIcon } from '@material-ui/icons/ShoppingCart';
+// import { makeStyles } from '@material-ui/core/styles';
 
-const header = (props) => {
+const Header = (props) => {
   console.log('WELL HERE IS THEM PROPS', props);
   return (
     <div>
-      <h1>name of your virtual store HERE</h1>
+      <AppBar position='static'>
+        <h1>OUR STORE</h1>
+      </AppBar>
       <ul>
-        hello from shit 
+        <h2>Browse Our Categories</h2>
         {props.prodCategories.category.map(eachCategory => {
-          return <li onClick={() => props.categories(eachCategory.name)} key={eachCategory.name}>
-            {eachCategory.name} : {eachCategory.active.toString()} </li>;})}
+          return <li key={eachCategory.name}> <button onClick={() => props.categories(eachCategory.name)} >
+            {eachCategory.name} : {eachCategory.active.toString()} </button></li>;})}
       </ul>
     </div>
   );
@@ -22,4 +27,4 @@ const mapStateToProps = state => ({ prodCategories: state.productCategories });
 
 const mapDispatchToProps = { categories, reset };
 
-export default connect(mapStateToProps, mapDispatchToProps)(header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
