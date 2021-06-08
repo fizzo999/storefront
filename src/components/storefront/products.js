@@ -28,7 +28,7 @@ const products = () => {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} elevation={3}>
       <CardActionArea>
         <CardMedia
           className={classes.media}

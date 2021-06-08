@@ -155,3 +155,5 @@ npm run test
 ## Architecture
 
 react based jsx frontend that displays a shoppingcart - allows user input to view, comment, select and checkout items to a shopping cart.
+
+<div class="MuiCardMedia-root jss31" title="Monitor" style="background-image: url(&quot;https://source.unsplash.com/random?Monitor&quot;);"></div>
