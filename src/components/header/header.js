@@ -12,6 +12,7 @@ import Cart from '../cart/simplecart.js';
 const useStyles = makeStyles({
   catButtons: {
     display: 'inline',
+    margin: 23,
   },
   root: {
     textAlign: 'center',
@@ -35,7 +36,7 @@ const Header = (props) => {
   const id = open ? 'simple-popover' : undefined;
 
 
-  console.log('WELL HERE IS THEM PROPS', props);
+  console.log('WELL HERE IS THEM PROPS', props.activeCategory);
   return (
     <>
       <AppBar position='static'>
@@ -52,9 +53,10 @@ const Header = (props) => {
       <Container className={classes.root}>
         <ul>
           <h1>Browse Our Categories - ShoppingCartItems: {props.cart.length}</h1>
+          <Button onClick={() => props.selectCategory('')} variant='contained' size='large' style={{backgoundColor:'green'}}>select all</Button>
           {props.prodCategories.categories.map(eachCategory => {
-            return <li key={eachCategory.name} className={classes.catButtons}> <button onClick={() => props.selectCategory(eachCategory.name)} >
-              {eachCategory.name} : {eachCategory.active.toString()} </button></li>;})}
+            return <li key={eachCategory.name} className={classes.catButtons}> <Button onClick={() => props.selectCategory(eachCategory.name)} variant='contained' size='large' color={props.activeCategory === eachCategory.name ? 'secondary': 'primary'}>
+              {eachCategory.name}</Button></li>;})}
         </ul>
       </Container>
     </>
@@ -63,7 +65,8 @@ const Header = (props) => {
 
 const mapStateToProps = state => ({
   prodCategories: state.productCategories,
-  cart: state.cart
+  cart: state.cart,
+  activeCategory: state.productCategories.activeCategory
 });
 
 const mapDispatchToProps = { selectCategory, reset };
