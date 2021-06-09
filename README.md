@@ -12,7 +12,7 @@ Virtual Store using react and redux and materialUI- built in 4 phases. A Web App
 
 ## <center> [sandbox deployed site](https://5983i.csb.app/) </center>
 
-<!-- ## <center> [netlify deployed link](https://eager-albattani-da23df.netlify.app/) </center> -->
+## <center> [netlify deployed link](https://60c05bb40128a985d69d6f77--adoring-pike-a16cd4.netlify.app/) </center>
 
 <!-- ![](./src/assets/ToDoApp001.PNG) -->
 
