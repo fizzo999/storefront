@@ -10,7 +10,7 @@ Virtual Store using react and redux and materialUI- built in 4 phases. A Web App
 
 ## links and resources
 
-<!-- ## <center> [sandbox deployed site](https://6yvwb.csb.app/) </center> -->
+## <center> [sandbox deployed site](https://5983i.csb.app/) </center>
 
 <!-- ## <center> [netlify deployed link](https://eager-albattani-da23df.netlify.app/) </center> -->
 
@@ -132,6 +132,16 @@ The application will be created with the following overall architecture and meth
 
 <hr/>
 
+## time sheet
+
+- Number and name of feature: phase 2 - finish phase 2 - combined redux - w products and cart to show avatar images of whats in the cart - deploy to sandbox; setState and setEffect;
+- Estimate of time needed to complete: 4 hours
+- Start time: 3:00 pm
+- Finish time: 11:00 pm
+- Actual time needed to complete: 7 hours
+
+<hr/>
+
 ## Setup
 
 git clone repo from github link:
@@ -155,5 +165,3 @@ npm run test
 ## Architecture
 
 react based jsx frontend that displays a shoppingcart - allows user input to view, comment, select and checkout items to a shopping cart.
-
-<div class="MuiCardMedia-root jss31" title="Monitor" style="background-image: url(&quot;https://source.unsplash.com/random?Monitor&quot;);"></div>
