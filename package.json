@@ -2,9 +2,13 @@
   "name": "storefront",
   "version": "1.0.0",
   "description": "To Do List Manager using react - built in 4 phases. A Web Application for securely managing a To Do List",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "react-scripts start"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "lint": "eslint './src/**/*'"
   },
   "repository": {
     "type": "git",
@@ -24,7 +28,8 @@
     "react-redux": "^7.2.4",
     "react-scripts": "^4.0.3",
     "redux": "^4.1.0",
-    "redux-devtools-extension": "^2.13.9"
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.3.0"
   },
   "browserslist": {
     "production": [
