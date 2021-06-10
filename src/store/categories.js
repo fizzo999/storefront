@@ -4,16 +4,20 @@ let initialState = {
     { name: 'books', displayName: 'Books', description: 'A Collection of the most inspirational Reads', active: false},
     { name: 'clothes', displayName: 'Clothes', description: 'A Collection of the most stylish Clothes', active: false}
   ],
-  activeCategory: ''
+  activeCategory: '',
+  activeDescription: 'A selection of the finest products',
 };
 
 export default (state = initialState, action) => {
   let { type, payload } = action;
-  let activeCategory = payload;
+  // let activeCategory = payload;
+  let newActiveDescription, revisedActiveDescription;
 
   switch (type) {
   case 'SELECT CATEGORY':
-    return { categories: [...state.categories], activeCategory };
+    newActiveDescription = state.categories.map(eachCat => eachCat.name === payload ? eachCat.description : '');
+    revisedActiveDescription = payload === '' ? initialState.activeDescription : newActiveDescription;
+    return { categories: [...state.categories], activeCategory: payload, activeDescription: revisedActiveDescription};
 
   case 'GET CATEGORIES':
     return state;
@@ -42,38 +46,3 @@ export const reset = () => {
     type: 'RESET'
   };
 };
-
-// export default (state = initialState, action) => {
-//   let { type, payload } = action;
-//   let categoriesList = [];
-
-//   switch(type) {
-//   case 'SELECT CATEGORY':
-//     categoriesList = state.category.map(eachCategory => {
-//       if (eachCategory.name === payload) {
-//         return { name: eachCategory.name, active: true };
-//       } else {
-//         return { name: eachCategory.name, active: false };
-//       }
-//     });
-//     return { category: categoriesList };
-//   case 'RESET':
-//     return initialState;
-
-//   default:
-//     return state;
-//   }
-// };
-
-// export const categories = (productCategory) => {
-//   return {
-//     type: 'SELECT CATEGORY',
-//     payload: productCategory
-//   };
-// };
-
-// export const reset = () => {
-//   return {
-//     type: 'RESET'
-//   };
-// };
