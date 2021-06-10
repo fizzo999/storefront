@@ -1,4 +1,9 @@
-let initialState = { results: [] };
+let initialState = {
+  products: [],
+  count: 0,
+  filteredProducts: [],
+  data: [1, 2, 3],
+};
 
 export default (state = initialState, action) => {
   const { type, payload } = action;
@@ -6,10 +11,9 @@ export default (state = initialState, action) => {
   switch(type) {
   case 'GET_ONLINE_PRODUCTS':
     // return { results: [..., payload ]};
-
     // newResults = state.results
     // return newResults.push(payload);
-    return [...state.results, payload ];
+    return {products: payload.results, count: payload.count};
   case 'POST_ONLINE_PRODUCTS':
     return 'SOMETHING';
   case 'PUT_ONLINE_PRODUCTS':

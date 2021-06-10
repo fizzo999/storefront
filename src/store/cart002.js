@@ -8,7 +8,7 @@ export default function CartReducerFunction(state = initialState, action) {
   switch(type) {
   case 'ADD_TO_CART':
     return { ...state, cart: [ ...state.cart, payload] };
-  case 'REMOVE FROM CART':
+  case 'REMOVE_FROM_CART':
     let tempCart = [...state.cart];
     let deletedOneItem = false;
     let updatedCart = tempCart.filter((item) => {

@@ -5,7 +5,6 @@ import { makeStyles } from '@material-ui/core/styles';
 // import Container from '@material-ui/core/Container';
 import { Typography, Button, Container } from '@material-ui/core';
 
-
 import { connect } from 'react-redux';
 import { getCategories, selectCategory, reset } from '../../store/categories';
 
@@ -17,9 +16,7 @@ const useStyles = makeStyles({
   root: {
     textAlign: 'center',
   }
-
 });
-
 
 const Categories = (props) => {
   const classes = useStyles();

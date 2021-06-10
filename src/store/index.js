@@ -2,17 +2,16 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 
-import reducer from './reducers.js';
-
-import productCategories from './categories.js';
-import products from './products.js';
-import cart from './cart.js';
+import getDataOnlineReducer from './reducers.js';
+import productCategoriesReducer from './categories.js';
+import productsReducer from './products.js';
+import cartReducer from './cart.js';
 
 let allReducers = combineReducers({
-  data: reducer,
-  productCategories,
-  products,
-  cart
+  data: getDataOnlineReducer,
+  productCategories: productCategoriesReducer,
+  products: productsReducer,
+  cart: cartReducer
 });
 
 const store = () => {
