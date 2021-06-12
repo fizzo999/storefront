@@ -1,13 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import Avatar from '@material-ui/core/Avatar';
-import Typography from '@material-ui/core/Typography';
+import { List, ListItem, ListItemText, ListItemIcon, ListItemAvatar, Avatar, Typography, Button } from '@material-ui/core/';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 
@@ -54,6 +48,7 @@ const Cart = props => {
         })}
 
       </List>
+      <Button variant='contained' color='primary' style={{display: 'block', margin:'12px auto', background: 'green'}} >checkout</Button>
     </>
   );
 };
