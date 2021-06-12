@@ -13,7 +13,7 @@ export default (state = initialState, action) => {
     // return { results: [..., payload ]};
     // newResults = state.results
     // return newResults.push(payload);
-    return {products: payload.results, count: payload.count};
+    return { products: payload.results, count: payload.count };
   case 'POST_ONLINE_PRODUCTS':
     return 'SOMETHING';
   case 'PUT_ONLINE_PRODUCTS':

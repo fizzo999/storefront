@@ -12,7 +12,7 @@ Virtual Store using react and redux and materialUI- built in 4 phases. A Web App
 
 ## <center> [sandbox deployed site](https://5983i.csb.app/) </center>
 
-## <center> [netlify deployed link](https://60c05bb40128a985d69d6f77--adoring-pike-a16cd4.netlify.app/) </center>
+## <center> [netlify deployed link](https://60c1a8c7455831cad96aedb9--adoring-pike-a16cd4.netlify.app/) </center>
 
 <!-- ![](./src/assets/ToDoApp001.PNG) -->
 
@@ -138,6 +138,16 @@ The application will be created with the following overall architecture and meth
 - Estimate of time needed to complete: 4 hours
 - Start time: 3:00 pm
 - Finish time: 11:00 pm
+- Actual time needed to complete: 7 hours
+
+<hr/>
+
+## time sheet
+
+- Number and name of feature: phase 3 - debug more small UI interface issues, start on thunk - live API data - deploy to sandbox; setState and setEffect;
+- Estimate of time needed to complete: 4 hours
+- Start time: 2:00 pm
+- Finish time: 10:00 pm
 - Actual time needed to complete: 7 hours
 
 <hr/>
