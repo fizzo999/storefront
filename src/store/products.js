@@ -61,9 +61,9 @@ export const getProductsByCategory = (category) => {
   };
 };
 
-export const reduceQuantity = (productObject) => {
+export const reduceQuantity = (product) => {
   return {
     type: 'ADD TO CART',
-    payload: productObject
+    payload: product
   };
 };

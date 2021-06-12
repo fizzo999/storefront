@@ -20,7 +20,6 @@ const useStyles = makeStyles({
 
 const Categories = (props) => {
   const classes = useStyles();
-  console.log('so here we are inside the categories of storefront and here are the prop ======>>>>>', props);
   return (
     <>
       <Container className={classes.root}>

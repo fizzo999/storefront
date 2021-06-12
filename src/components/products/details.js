@@ -1,23 +1,26 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 import { addToCart } from '../../store/cart.js';
 
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
+// import Card from '@material-ui/core/Card';
+// import CardActionArea from '@material-ui/core/CardActionArea';
+// import CardActions from '@material-ui/core/CardActions';
+// import CardContent from '@material-ui/core/CardContent';
+// import CardMedia from '@material-ui/core/CardMedia';
+// import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 const Products = (props) => {
+  // const [products, setProducts] = useState(props.products.products.filter(product => product.inventory > 0));
   const [products, setProducts] = useState(props.products.products.filter(product => product.inventory > 0));
 
   useEffect(() => {
     setProducts(props.products.products);
   }, [props.activeCategory]);
+
+  console.log(products);
 
   return (
     <>
@@ -25,7 +28,7 @@ const Products = (props) => {
         Products - {props.activeCategory}
       </Typography>
       <div className='products'>
-        {
+        {/* {
           products.map((product, idx) => {
             return (
               <Card key={idx}>
@@ -50,7 +53,8 @@ const Products = (props) => {
               </Card>
             );
           })
-        }
+        } */}
+        <h1 style={{textAlign: 'center', padding: 24, border: 'solid 1px black', borderRadius: '12px'}}>this page is under construction - seriously</h1>
       </div>
     </>
   );
@@ -58,7 +62,7 @@ const Products = (props) => {
 
 const mapStateToProps = state => ({
   products: state.products,
-  activeCategory: state.categories.activeCategory
+  activeCategory: state.productCategories.activeCategory
 });
 
 const mapDispatchToProps = { addToCart };

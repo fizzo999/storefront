@@ -5,9 +5,13 @@ export default (state = initialState, action) => {
 
   switch(type) {
   case 'ADD TO CART':
-    if (payload.inventory <= 0) return [...state];
-    payload.inventory--;
-    return [...state, payload];
+    if ( payload ) {
+      if ( payload.inventory <= 0) return [...state];
+      payload.inventory--;
+      return [...state, payload];
+    } else {
+      return state;
+    }
   default:
     return state;
   }

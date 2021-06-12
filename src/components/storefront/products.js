@@ -45,18 +45,16 @@ const useStyles = makeStyles({
 const Products = (props) => {
   const classes = useStyles();
   const [products, setProducts] = useState(props.products.filter(product => product.inventory > 0));
-
+  
   const fetchData = (e) => {
     e && e.preventDefault();
     props.get();
   };
-
+  
   useEffect(() => {
-    setProducts(props.products);
+    setProducts(props.products.filter(product => product.inventory > 0));
   }, [props.activeCategory]);
 
-  // console.log('we are inside of products AND HERE ARE THE PROPS.activeCategory ======>>>>>', props.activeCategory);
-  // console.log('we are inside of products AND HERE ARE THE PROPS.products ======>>>>>', props.products);
   return (
     <>
       <Typography variant='h3' className={classes.header} >
@@ -68,7 +66,7 @@ const Products = (props) => {
       <div className='products'>
         <Grid container spacing={4}>
           {products.map((product, idx) => (
-            <Grid item key={product.name} xs={12} sm={6} md={4}>
+            <Grid item key={product._id} xs={12} sm={6} md={4}>
               <Card key={idx} className={classes.root}>
                 <CardActionArea>
                   <CardMedia className={classes.media} image={product.image} title={product.product}/>
@@ -86,7 +84,8 @@ const Products = (props) => {
                 </CardActionArea>
                 <CardActions className={classes.cardBottom}>
                   <Button size='small' color='primary' component={Link} to={`/product/${product._id}`}>View Product</Button>
-                  <Button size='small' color='primary' onClick={() => props.addToCart(product)}>    Add To Cart</Button>
+                  <Button size='small' color='primary' onClick={() => {props.addToCart(product);}}>
+                    Add To Cart</Button>
                 </CardActions>
               </Card>
             </Grid>
@@ -116,7 +115,7 @@ const mapStateToProps = state => ({
 // const mapDispatchToProps = { addToCart };
 const mapDispatchToProps = (dispatch) => ({
   get: () => dispatch(getRemoteData()),
-  addToCart: () => dispatch(addToCart()),
+  addToCart: (obj) => dispatch(addToCart(obj)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Products);

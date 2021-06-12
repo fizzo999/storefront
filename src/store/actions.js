@@ -8,7 +8,7 @@ export const getRemoteData = () => dispatch => {
   return superagent.get(api)
     .then(response => {
       console.log('HERE IS THE data FROM superagent ======>>>>>>>', response.body);
-      console.log('HERE IS THE data FROM superagent ======>>>>>>>', response.status);
+      console.log('HERE IS THE status FROM superagent ======>>>>>>>', response.status);
       dispatch(getAction(response.body));
     });
 };
