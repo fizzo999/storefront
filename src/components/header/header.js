@@ -33,7 +33,7 @@ const Header = (props) => {
           <Button color="inherit" onClick={handleClick} className="cart">Cart <span>({props.cart.length})</span></Button>
         </Toolbar>
         <Popover id={id} open={open} anchorEl={anchorEl} onClose={handleClose} anchorOrigin={{ vertical: 'bottom', horizontal: 'center'}} transformOrigin={{ vertical: 'top', horizontal: 'center'}}>
-          <Cart />
+          <Cart handleClose={handleClose}/>
         </Popover>
       </AppBar>
     </>
@@ -41,7 +41,7 @@ const Header = (props) => {
 };
 
 const mapStateToProps = state => ({
-  cart: state.cart,
+  cart: state.cart.products,
 });
 
 const mapDispatchToProps = { selectCategory, reset };
