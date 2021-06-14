@@ -24,7 +24,7 @@ export default (state = initialState, action) => {
       if ( payload.inCart === 1) {
         tempArr = state.products.filter(product => product.product !== payload.product);
         payload.inventory = payload.inventory + payload.inCart;
-        return { products: tempArr, totalItems: state.totalItems - payload.inCart };        
+        return { products: tempArr, totalItems: state.totalItems - payload.inCart };
       } else {
         tempArr = state.products.filter(product => product.product !== payload.product);
         payload.inventory = payload.inventory + 1;
@@ -34,7 +34,7 @@ export default (state = initialState, action) => {
       }
     } else {
       return state;
-    } 
+    }
   case 'REMOVE FROM CART':
     if (payload) {
       tempArr = state.products.filter(product => product.product !== payload.product);

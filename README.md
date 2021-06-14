@@ -152,6 +152,16 @@ The application will be created with the following overall architecture and meth
 
 <hr/>
 
+## time sheet
+
+- Number and name of feature: phase 4 - debug more small UI interface issues, cart detail and product detail; Router link and product counter, product remove and add in detail cart, re deploy;
+- Estimate of time needed to complete: 6 hours
+- Start time: 6:00 pm
+- Finish time: 12:00 pm
+- Actual time needed to complete: 7 hours
+
+<hr/>
+
 ## Setup
 
 git clone repo from github link:
