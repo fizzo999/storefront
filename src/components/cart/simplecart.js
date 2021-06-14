@@ -8,13 +8,16 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 const Cart = props => {
   console.log('so here we are inside the simplecart =====>>>>>>', props.cart);
+  let tempArr;
+  tempArr = props.cart.filter((item, index) => {
+    return props.cart.indexOf(item) === index;});
   return (
     <>
       <List component='nav' aria-label='secondary mailbox folders'>
         <ListItem>
           <ListItemText primary={
             <Typography
-              component='p'
+              component='h5'
               variant='body1'
             >
               <ListItemIcon>
@@ -24,24 +27,31 @@ const Cart = props => {
             </Typography>
           } />
         </ListItem>
-        {props.cart.map(item => {
+        {tempArr.map((item,idx) => {
           return (
-            <ListItem button>
+            <ListItem key={idx} button>
               <ListItemAvatar>
                 <Avatar alt='Remy Sharp' src={item.image} />
               </ListItemAvatar>
-
-              <ListItemText primary={item.product} secondary={
-                <>
+              <ListItemText  primary={item.product} secondary={
+                <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
                   <Typography
                     component='span'
-                    variant='body2'
+                    variant='body1'
                     style={{ display: 'block' }}
                     color='textPrimary'
                   >
                     Price - ${item.price}
                   </Typography>
-                </>
+                  <Typography
+                    component='span'
+                    variant='body1'
+                    style={{ display: 'block' }}
+                    color='textPrimary'
+                  >
+                    amount: <b>{item.inCart}</b>
+                  </Typography>
+                </div>
               } />
             </ListItem>
           );

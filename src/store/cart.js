@@ -8,6 +8,8 @@ export default (state = initialState, action) => {
     if ( payload ) {
       if ( payload.inventory <= 0) return [...state];
       payload.inventory--;
+      payload.inCart = payload.inCart + 1;
+      console.log('we are inside the reducer for CART and the payload is ===>>>', payload);
       return [...state, payload];
     } else {
       return state;
