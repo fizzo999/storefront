@@ -3,12 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addToCart, removeFromCart, reduceItemInCart } from '../../store/cart.js';
 
-import { makeStyles } from '@material-ui/core/styles';
-import { Container, List, ListItem, ListItemAvatar, Button, Avatar } from '@material-ui/core';
+import { Container, List, ListItem, ListItemAvatar, Button, Avatar, makeStyles } from '@material-ui/core';
 import { AddBox, IndeterminateCheckBox, DeleteForever } from '@material-ui/icons';
-
-// import { removeItemFromCart } from '../../store/cart'
-// import { incrementRemoteData } from '../../store/actions'
 
 const useStyles = makeStyles({
   bold: {
@@ -29,11 +25,11 @@ const useStyles = makeStyles({
 const Cart = props => {
   const classes = useStyles();
 
-  const total = (arr) => {
+  const total = (inputArray) => {
     let total = 0;
-    arr.forEach(item => {
+    inputArray.forEach(item => {
       total = total + item.price;
-    });  
+    });
     return total;
   };
 
@@ -43,32 +39,28 @@ const Cart = props => {
   tempArr = props.cart.filter((item, index) => {
     return props.cart.indexOf(item) === index;});
 
-  console.log('here is the state =====>>>>>', props.state);
-  console.log('here is the cart =====>>>>>', props.cart);
-  console.log('here is the totalItems =====>>>>>', props.totalItems);
-
   return(
     <React.Fragment>
       <Container maxWidth="md">
-        <List>
+        <List >
           {tempArr.map((product, index) =>{
             return(
-              <ListItem className="checkout-list" key={index} style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+              <ListItem key={index} style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
                 <ListItemAvatar >
-                  <Avatar alt={product.product} src={product.image} className={classes.avatar}/>
-                  <span>{product.product.toUpperCase()}</span>
+                  <Avatar alt={product.product} src={product.image} className={classes.avatar} />
                 </ListItemAvatar>
-                <ListItem>
+                <p style={{width: '300px'}}>{product.product.toUpperCase()}</p>
+                <div>
                   <span className={classes.bold} >${product.price}</span>
                   <DeleteForever className={classes.button} onClick={() => props.removeFromCart(product)}/>
                   <AddBox className={classes.button} onClick={() => props.addToCart(product)}/>
                   <IndeterminateCheckBox className={classes.button} onClick={() => props.reduceItemInCart(product)}/>
                   <span className={classes.bold} > quantity: {product.inCart}</span>
-                </ListItem>
+                </div>
               </ListItem>
             );
           })}
-          <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+          <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'centered'}}>
             <p className={classes.bold}>Total</p>
             <p className={classes.bold}>${totalPrice}</p>
           </div>

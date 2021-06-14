@@ -50,7 +50,6 @@ const Products = (props) => {
     e && e.preventDefault();
     props.get();
   };
-  
   useEffect(() => {
     setProducts(props.products.filter(product => product.inventory > 0));
   }, [props.activeCategory]);
