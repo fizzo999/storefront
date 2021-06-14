@@ -45,7 +45,7 @@ const useStyles = makeStyles({
 const Products = (props) => {
   const classes = useStyles();
   const [products, setProducts] = useState(props.products.filter(product => product.inventory > 0));
-  
+
   const fetchData = (e) => {
     e && e.preventDefault();
     props.get();
@@ -90,7 +90,7 @@ const Products = (props) => {
                       </CardContent>
                     </CardActionArea>
                     <CardActions className={classes.cardBottom}>
-                      <Button size='small' color='primary' component={Link} to={`/product/${product._id}`}>View Product</Button>
+                      <Button size='small' color='primary' component={Link} to={{pathname: `/product/${product._id}`, state: product}}>View Product</Button>
                       <Button size='small' color='primary' onClick={() => {props.addToCart(product);}}>
                         Add To Cart</Button>
                     </CardActions>

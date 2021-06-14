@@ -43,6 +43,24 @@ export default (state = initialState, action) => {
         }
       })],
     };
+  case 'REDUCE ITEM IN CART':
+    return {
+      products: [...state.products.map(eachProduct => {
+        if ( eachProduct.product === payload.product ) {
+          return { ...eachProduct, inventory: eachProduct.inventory + 1};
+        } else {
+          return eachProduct;
+        }
+      })]};
+  case 'REMOVE FROM CART':
+    return {
+      products: [...state.products.map(eachProduct => {
+        if ( eachProduct.product === payload.product ) {
+          return { ...eachProduct, inventory: eachProduct.inventory + payload.inCart};
+        } else {
+          return eachProduct;
+        }
+      })]};
   default:
     return state;
   }
@@ -63,7 +81,7 @@ export const getProductsByCategory = (category) => {
 
 export const reduceQuantity = (product) => {
   return {
-    type: 'ADD TO CART',
+    type: 'REDUCE ITEM IN CART',
     payload: product
   };
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { List, ListItem, ListItemText, ListItemIcon, ListItemAvatar, Avatar, Typography, Button } from '@material-ui/core/';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
@@ -33,7 +34,7 @@ const Cart = props => {
               <ListItemAvatar>
                 <Avatar alt='Remy Sharp' src={item.image} />
               </ListItemAvatar>
-              <ListItemText  primary={item.product} secondary={
+              <ListItemText primary={item.product} secondary={
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
                   <Typography
                     component='span'
@@ -56,15 +57,15 @@ const Cart = props => {
             </ListItem>
           );
         })}
-
       </List>
-      <Button variant='contained' color='primary' style={{display: 'block', margin:'12px auto', background: 'green'}} >checkout</Button>
+      <Button variant="contained" color="primary" style={{display: 'block', margin: '18px auto', padding: '8px 100px', width: '270px'}} component={Link} to={{pathname: `/cart`}} onClick={props.handleClose}>checkout</Button>
     </>
   );
 };
 
 const mapStateToProps = state => ({
-  cart: state.cart
+  cart: state.cart.products,
+  totalItems: state.cart.totalItems
 });
 
 export default connect(mapStateToProps)(Cart);
