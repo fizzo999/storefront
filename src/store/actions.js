@@ -1,6 +1,6 @@
 import superagent from 'superagent';
 
-let api = 'https://api-js401.herokuapp.com/api/v1/products';
+let api = 'https://run.mocky.io/v3/e1617541-f4b9-4411-a512-40f48086a7f7';
 
 //==============( async function ) creator functions =================
 
@@ -9,7 +9,8 @@ export const getRemoteData = () => dispatch => {
     .then(response => {
       console.log('HERE IS THE data FROM superagent ======>>>>>>>', response.body);
       console.log('HERE IS THE status FROM superagent ======>>>>>>>', response.status);
-      dispatch(getAction(response.body));
+      // dispatch(getAction(JSON.parse(response.body)));
+      dispatch(getAction(response));
     });
 };
 

@@ -44,15 +44,26 @@ const useStyles = makeStyles({
 
 const Products = (props) => {
   const classes = useStyles();
-  const [products, setProducts] = useState(props.products.filter(product => product.inventory > 0));
+  // const [products, setProducts] = useState(props.products.filter(product => product.inventory > 0));
+  const [products, setProducts] = useState(props.data.filter(product => product.inventory > 0));
 
   const fetchData = (e) => {
     e && e.preventDefault();
     props.get();
   };
   useEffect(() => {
-    setProducts(props.products.filter(product => product.inventory > 0));
+    // setProducts(props.products.filter(product => product.inventory > 0));
+    setProducts(props.data.filter(product => (product.inventory > 0) && props.activeCategory === '' ? product : product.category === props.activeCategory));
   }, [props.activeCategory]);
+
+  useEffect(() => {
+    props.get();
+    // setTimeout(() => {
+    setProducts(props.data.filter(product => product.inventory > 0));
+    // }, 2000);
+  }, []);
+
+  console.log('we are in products and here is the products from online =====>>>>>>', props.data);
 
   return (
     <>
@@ -116,7 +127,7 @@ const mapStateToProps = state => ({
   products: state.products.products,
   activeCategory: state.productCategories.activeCategory,
   activeDescription: state.productCategories.activeDescription,
-  data: state.data
+  data: state.data.products
 });
 
 // const mapDispatchToProps = { addToCart };
