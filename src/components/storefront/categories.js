@@ -48,7 +48,8 @@ const mapStateToProps = state => ({
   categories: state.productCategories.categories,
   prodCategories: state.productCategories,
   cart: state.cart,
-  activeCategory: state.productCategories.activeCategory
+  activeCategory: state.productCategories.activeCategory,
+  data: state.data.products
 });
 
 const mapDispatchToProps = { getCategories, selectCategory, reset };
