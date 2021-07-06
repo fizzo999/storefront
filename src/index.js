@@ -7,7 +7,7 @@ import store from './store/index.js';
 import App from './app.js';
 
 function Entry() {
-  console.log('we are inside of top level APP and here is store', store);
+  // console.log('we are inside of top level APP and here is store', store);
   return (
     <Provider store={store}>
       <Router>

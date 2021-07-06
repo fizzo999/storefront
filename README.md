@@ -1,6 +1,6 @@
 # Virtual Store
 
-Virtual Store using react and redux and materialUI- built in 4 phases. A Web Application for displaying a store with products, detail views, comments, shopping cart
+Virtual Store using react, redux and materialUI - built in 4 phases. A Web Application for displaying a store with products, detail views, comments, shopping cart
 
 ## Author: Fizzo Pannosch
 
@@ -10,15 +10,15 @@ Virtual Store using react and redux and materialUI- built in 4 phases. A Web App
 
 ## links and resources
 
-## <center> [sandbox deployed site](https://5983i.csb.app/) </center>
+<!-- ## <center> [sandbox deployed site](https://5983i.csb.app/) </center> -->
 
-## <center> [netlify deployed link](https://60c7f2656aeb134438192ff6--confident-agnesi-ff6746.netlify.app/) </center>
+## <center> [netlify deployed link](https://github.com/fizzo999/storefront) </center>
 
-<!-- ![](./src/assets/ToDoApp001.PNG) -->
+![a GIF preview of the depolyed site](./src/assets/storefront.GIF)
 
 <hr>
 
-## <center> UML of starter code - FIZZO </center>
+<!-- ## <center> UML of starter code - FIZZO </center> -->
 
 <!-- ![](src/assets/UML-todoListManager.jpg) -->
 
@@ -28,7 +28,7 @@ An online shopping portal for a fictional store
 
 ## Business Requirements
 
-Our application will power an online storefront that will allow our users to browse our product offerings by category, place items in their shopping cart, and check-out when they are ready to make their purchase
+This application will power an online storefront that will allow users to browse product offerings by category, place items in their shopping cart, and check-out when they are ready to make their purchase.
 
 [Live Example - link to Code Fellows live example website](https://virtual-web-store.netlify.app/)
 
