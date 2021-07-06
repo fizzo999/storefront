@@ -14,11 +14,11 @@ Virtual Store using react, redux and materialUI - built in 4 phases. A Web Appli
 
 ## <center> [netlify deployed link](https://github.com/fizzo999/storefront) </center>
 
-<!-- ![](./src/assets/ToDoApp001.PNG) -->
+![a GIF preview of the depolyed site](./src/assets/storefront.GIF)
 
 <hr>
 
-## <center> UML of starter code - FIZZO </center>
+<!-- ## <center> UML of starter code - FIZZO </center> -->
 
 <!-- ![](src/assets/UML-todoListManager.jpg) -->
 
