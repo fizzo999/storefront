@@ -12,7 +12,7 @@ Virtual Store using react, redux and materialUI - built in 4 phases. A Web Appli
 
 <!-- ## <center> [sandbox deployed site](https://5983i.csb.app/) </center> -->
 
-## <center> [netlify deployed link](https://github.com/fizzo999/storefront) </center>
+## <center> [netlify deployed link](https://fizzo999-storefront.netlify.app/) </center>
 
 ![a GIF preview of the depolyed site](./src/assets/storefront.GIF)
 
